@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+# HW8.1: Warp an image with a mouse clicking and rotate it with a perspective transformation
+
 circles = np.zeros((4, 2), np.int32)
 counter = 0
 

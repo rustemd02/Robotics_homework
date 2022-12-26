@@ -1,10 +1,13 @@
 import cv2
 import numpy as np
 
+# HW8.2: Use the city map image to annotate it by clicking on the starting point of the route,
+# intermediate points to be connected with lines in order to indicate the route along the streets to reach the end point
+
 points = np.zeros((100, 2), np.int32)
 counter = 0
 distPix = 0
-mapScale = 80/138  # metres/pixels
+mapScale = 80 / 138  # metres/pixels
 textOrigin = (400, 62)
 
 

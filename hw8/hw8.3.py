@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+# HW8.3: Create a bird's eye view video from a fixed camera using perspective transformation and save it to a file, adding an annotation
+
 circles = np.zeros((4, 2), np.int32)
 counter = 0
 
@@ -28,6 +30,7 @@ while True:
         matrix = cv2.getPerspectiveTransform(pts1, pts2)
         imgOut = cv2.warpPerspective(picArea, matrix, (width, height))
         cv2.imshow("Out", imgOut)
+        cv2.imwrite("perspective_road.png", imgOut)
 
     k = cv2.waitKey(20) & 0xFF  # stop on ESC and start video!
     if k == 27:
@@ -54,6 +57,7 @@ while video.isOpened():
             matrix = cv2.getPerspectiveTransform(pts1, pts2)
             imgOut = cv2.warpPerspective(currentFrame, matrix, (width, height))
             cv2.imshow("Out", imgOut)
+
 
         k = cv2.waitKey(20) & 0xFF  # stop on ESC
         if k == 27:
